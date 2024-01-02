@@ -23,7 +23,7 @@ namespace SG
         private float lookAngle;
         private float pivotAngle;
         public float minimumPivot = -35;
-        public float maximumPivot = -35;
+        public float maximumPivot = 35;
 
         private void Awake()
         {
