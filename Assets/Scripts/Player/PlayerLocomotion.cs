@@ -51,6 +51,8 @@ namespace SG
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
             rigidbody.velocity = projectedVelocity;
 
+            animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0);
+
             if (animatorHandler.canRotate)
             {
                 HandleRotation(delta);
