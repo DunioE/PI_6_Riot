@@ -39,7 +39,7 @@ namespace SG
         [SerializeField]
         float rotationSpeed = 10;
         [SerializeField]
-        float fallingSpeed = 45;
+        float fallingSpeed = 120;
 
         void Start()
         {
@@ -196,7 +196,7 @@ namespace SG
                     }
                     else
                     {
-                        animatorHandler.PlayTargetAnimation("Locomotion", false);
+                        animatorHandler.PlayTargetAnimation("Empty", false);
                         inAirTimer = 0;
                     }
 
@@ -223,6 +223,15 @@ namespace SG
                     playerManager.isInAir = true;
                 }
 
+            }
+
+            if (playerManager.isInteracting || inputHandler.moveAmount > 0)
+            {
+                myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime / 0.1f);
+            }
+            else
+            {
+                myTransform.position = targetPosition;
             }
 
             if (playerManager.isGrounded)

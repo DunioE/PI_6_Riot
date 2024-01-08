@@ -20,7 +20,7 @@ namespace SG
 
         private void Awake()
         {
-            cameraHandler = CameraHandler.singleton;
+            cameraHandler = Object.FindFirstObjectByType<CameraHandler>();
         }
 
         void Start()
