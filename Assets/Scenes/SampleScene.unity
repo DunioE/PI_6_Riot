@@ -6275,6 +6275,7 @@ GameObject:
   - component: {fileID: 1930012456}
   - component: {fileID: 1930012455}
   - component: {fileID: 1930012458}
+  - component: {fileID: 1930012459}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -6370,6 +6371,7 @@ MonoBehaviour:
   groundDirectionRayDistance: 0.2
   inAirTimer: 0
   movementSpeed: 5
+  walkingSpeed: 1
   sprintSpeed: 7
   rotationSpeed: 10
   fallingSpeed: 45
@@ -6424,6 +6426,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightWeapon: {fileID: 11400000, guid: 428181e489ce5474e9edb784c506462a, type: 2}
   leftWeapon: {fileID: 11400000, guid: 428181e489ce5474e9edb784c506462a, type: 2}
+--- !u!114 &1930012459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930012451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b593d0af5416b34e8b3a3fa046bd55e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1942241649
 PrefabInstance:
   m_ObjectHideFlags: 0
