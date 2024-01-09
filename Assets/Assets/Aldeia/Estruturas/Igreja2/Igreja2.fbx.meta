@@ -7,27 +7,27 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Igreja2_Janela
+      name: Igreja2_Janela.001
     second: {fileID: 2100000, guid: a37bc756fa11efb4b8b7c41aadd8518b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Igreja2_Janela2
+      name: Igreja2_Janela2.001
     second: {fileID: 2100000, guid: d58fa8a73b8db464095d908fe52dc0ca, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Igreja2_Madeira
+      name: Igreja2_Madeira.001
     second: {fileID: 2100000, guid: ddc7f63456ccd5343b7c40dbbee728d8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Igreja2_Parede
+      name: Igreja2_Parede.001
     second: {fileID: 2100000, guid: 17256d37fb840734083c33b81f44296e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Igreja2_Telhado
+      name: Igreja2_Telhado.001
     second: {fileID: 2100000, guid: a8a75c9a2b9b3f04ebdb02513b7eafe2, type: 2}
   materials:
     materialImportMode: 2

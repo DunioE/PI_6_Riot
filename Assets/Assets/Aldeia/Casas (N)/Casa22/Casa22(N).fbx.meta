@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 13a949b0eb9bd564abd58d7f79cdddcc
+guid: 8f5005b0c1d76cd418f81f902bdf7a0c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -123,12 +123,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: H22_30
-    second: {fileID: 2100000, guid: 64ee131c21f60034485984d5a9605f96, type: 2}
+    second: {fileID: 2100000, guid: 1f42538695e302741a2d706ae4383934, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: H22_31
-    second: {fileID: 2100000, guid: 1f42538695e302741a2d706ae4383934, type: 2}
+    second: {fileID: 2100000, guid: 64ee131c21f60034485984d5a9605f96, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
