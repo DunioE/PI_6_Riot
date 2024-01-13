@@ -3,42 +3,7 @@ guid: 6fcd0be473e6fdc43b25715cbb71b5db
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: H10_Borda
-    second: {fileID: 2100000, guid: 8ce238070d4e6394a9a08b9df8cda90c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: H10_Janelas
-    second: {fileID: 2100000, guid: cf36f6c9a01ddf84f9a56d29eb33e5a7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: H10_Madeira
-    second: {fileID: 2100000, guid: 305a1fd02eb686f41b2fc7dc02b91397, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: H10_Pedra
-    second: {fileID: 2100000, guid: d7300b70cbf5e4e46b8be6aa615a414e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: H10_PlacaMadeira
-    second: {fileID: 2100000, guid: fbf66bd0b2ea77c43bf3895985e230ad, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: H10_Porta
-    second: {fileID: 2100000, guid: 6c333059f1197fb43a5090aef685cf9e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: H10_Telhado
-    second: {fileID: 2100000, guid: 4c0bcdfd436af494c92b565b573569da, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
