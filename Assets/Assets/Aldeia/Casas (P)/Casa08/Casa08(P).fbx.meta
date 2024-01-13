@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: H8_Tudo
+      name: H8_Tudo.001
     second: {fileID: 2100000, guid: c1fa0ae43948c6247a0e872762f57a25, type: 2}
   materials:
     materialImportMode: 2
