@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Cores
+      name: Cores.001
     second: {fileID: 2100000, guid: a3ceb204d24ff944ca50e24c78dd29db, type: 2}
   - first:
       type: UnityEngine:Material
