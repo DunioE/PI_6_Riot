@@ -7,22 +7,22 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: T_Bandeira
+      name: T_Bandeira.001
     second: {fileID: 2100000, guid: 4bdc17412557903438a9fb9014522eca, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: T_Madeira
+      name: T_Madeira.001
     second: {fileID: 2100000, guid: f8e6cbbb13a9e944e8f69d28718bc6aa, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: T_Madeira2
+      name: T_Madeira2.001
     second: {fileID: 2100000, guid: 0edf4dab20a03ff4ba327504d8c2a97e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: T_Metal
+      name: T_Metal.001
     second: {fileID: 2100000, guid: 02597d1f1b246dc44ac6f27270d7f8d5, type: 2}
   materials:
     materialImportMode: 2
