@@ -33202,14 +33202,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210067769}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.13271172, z: -0, w: 0.9911547}
-  m_LocalPosition: {x: -282, y: 0.097, z: 106.9}
-  m_LocalScale: {x: 1.0619345, y: 1.0619345, z: 1.0619345}
+  m_LocalRotation: {x: -0, y: -0.99968714, z: -0, w: -0.025013011}
+  m_LocalPosition: {x: -281.7538, y: 0.13600004, z: 106.83896}
+  m_LocalScale: {x: 1.3435595, y: 1.3435595, z: 1.3435595}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 330504737}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 15.253, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -182.867, z: 0}
 --- !u!54 &1210067771
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -55198,6 +55198,7 @@ MonoBehaviour:
   rt_Input: 0
   rollFlag: 0
   sprintFlag: 0
+  comboFlag: 0
   rollInputTimer: 0
 --- !u!114 &1930012457
 MonoBehaviour:
@@ -55215,6 +55216,7 @@ MonoBehaviour:
   isSprinting: 0
   isInAir: 0
   isGrounded: 0
+  canDoCombo: 0
 --- !u!114 &1930012458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55241,6 +55243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b593d0af5416b34e8b3a3fa046bd55e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastAttack: 
 --- !u!114 &1930012460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59411,7 +59414,7 @@ Transform:
   m_GameObject: {fileID: 2081649108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.012165033, z: -0, w: 0.9999261}
-  m_LocalPosition: {x: -11.496685, y: 8.547217, z: 128.95023}
+  m_LocalPosition: {x: -5.88, y: 8.547217, z: 120.98}
   m_LocalScale: {x: 1, y: 1.2464284, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
