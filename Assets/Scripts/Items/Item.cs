@@ -7,7 +7,7 @@ namespace SG
     public class Item : ScriptableObject
     {
         [Header("Item Information")]
-        public Sprite itemicon;
+        public Sprite itemIcon;
         public string itemName;
     }
 }
