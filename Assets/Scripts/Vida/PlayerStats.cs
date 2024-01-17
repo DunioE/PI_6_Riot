@@ -10,12 +10,18 @@ namespace SG
         public int maxHealth;
         public int currentHealth;
 
-        public HealthBar healthbar;
+        public int staminaLevel = 10;
+        public int maxStamina;
+        public int currentStamina;
 
+        HealthBar healthBar;
+        StaminaBar staminaBar;
         AnimatorHandler animatorHandler;
 
         private void Awake ()
         {
+            healthBar = Object.FindFirstObjectByType<HealthBar>();
+            staminaBar = Object.FindFirstObjectByType<StaminaBar>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
 
@@ -23,7 +29,10 @@ namespace SG
         {
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
-            healthbar.SetMaxHealth(maxHealth);
+            healthBar.SetMaxHealth(maxHealth);
+
+            maxStamina = SetMaxStaminaFromStaminaLevel();
+            currentStamina = maxStamina;
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -32,11 +41,17 @@ namespace SG
             return maxHealth;
         }
 
+        private int SetMaxStaminaFromStaminaLevel()
+        {
+            maxStamina = staminaLevel * 10;
+            return maxStamina;
+        }
+
         public void TakeDamage(int damage)
         {
             currentHealth = currentHealth - damage;
 
-            healthbar.SetCurrentHealth(currentHealth);
+            healthBar.SetCurrentHealth(currentHealth);
 
             animatorHandler.PlayTargetAnimation("Damage_01", true);
 
@@ -46,6 +61,12 @@ namespace SG
                 animatorHandler.PlayTargetAnimation("Dead_01", true);
                 //Animação morte
             }
+        }
+
+        public void TakeStaminaDamage(int damage)
+        {
+            currentStamina = currentStamina - damage;
+            staminaBar.SetCurrentStamina(currentStamina);
         }
 
     }
