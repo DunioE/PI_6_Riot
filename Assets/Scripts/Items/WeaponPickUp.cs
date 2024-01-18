@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 namespace SG
 {
@@ -28,6 +30,9 @@ namespace SG
             playerLocomotion.rigidbody.velocity = Vector3.zero; //impede o player de mover
             animatorHandler.PlayTargetAnimation("Pick Up Item", true); //inicia a animação
             playerInventory.weaponsInventory.Add(weapon);
+            playerManager.itemInteractableGameObject.GetComponentInChildren<TMP_Text>().text = weapon.itemName;
+            playerManager.itemInteractableGameObject.GetComponentInChildren<RawImage>().texture = weapon.itemIcon.texture;
+            playerManager.itemInteractableGameObject.SetActive(true);
             Destroy(gameObject);
         }
     }

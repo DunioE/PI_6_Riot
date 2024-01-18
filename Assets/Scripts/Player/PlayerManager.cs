@@ -11,6 +11,10 @@ namespace SG
         CameraHandler cameraHandler;
         PlayerLocomotion playerLocomotion;
 
+        InteractableUI interactableUI;
+        public GameObject interactableUIGameObject;
+        public GameObject itemInteractableGameObject;
+
         public bool isInteracting;
 
         [Header("Player Flags")]
@@ -29,6 +33,7 @@ namespace SG
             inputHandler = GetComponent<InputHandler>();
             anim = GetComponentInChildren<Animator>();
             playerLocomotion = GetComponent<PlayerLocomotion>();
+            interactableUI = Object.FindFirstObjectByType<InteractableUI>();
         }
 
         void Update()
@@ -89,8 +94,6 @@ namespace SG
                     if (interactableObject != null)
                     {
                         string interactableText = interactableObject.interactbleText;
-                        // SET THE UI TEXT TO THE INTERACTABLE OBJECT'S TEXT
-                        // SET THE TEXT POP UP TO TRUE
 
                         if (inputHandler.a_Input)
                         {
@@ -99,14 +102,23 @@ namespace SG
                     }
                 }
             }
+            else
+            {
+                if (interactableUIGameObject != null)
+                {
+                    interactableUIGameObject.SetActive(false);
+                }
+                if (interactableUIGameObject != null && inputHandler.a_Input)
+                {
+                    itemInteractableGameObject.SetActive(false);
+                }
 
-            // Additional SphereCast to handle overlapping issue
+            }
             Vector3 rayOrigin = transform.position;
             rayOrigin.y = rayOrigin.y + 2f;
 
             if (Physics.SphereCast(rayOrigin, 0.3f, Vector3.down, out hit, 2.5f, cameraHandler.ignoreLayers))
             {
-                // Handle the second SphereCast result here
                 if (hit.collider.tag == "Interactable")
                 {
                     Interactable interactableObject = hit.collider.GetComponent<Interactable>();
@@ -114,8 +126,8 @@ namespace SG
                     if (interactableObject != null)
                     {
                         string interactableText = interactableObject.interactbleText;
-                        // SET THE UI TEXT TO THE INTERACTABLE OBJECT'S TEXT
-                        // SET THE TEXT POP UP TO TRUE
+                        interactableUI.interactableText.text = interactableText;
+                        interactableUIGameObject.SetActive(true);
 
                         if (inputHandler.a_Input)
                         {
