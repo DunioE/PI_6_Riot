@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aa9c09d32efcc447870d5aa77cfc8dc, type: 3}
+  m_Name: Machado
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: 72c813fdab87f9947b473ad43399177f, type: 3}
+  itemName: Machado
+  modelPrefab: {fileID: 4012003363687771936, guid: 2f5a12f87e465a54f9968489ab742f7c, type: 3}
+  isUnarmed: 0
+  right_hand_idle: Right_Arm_Idle_02
+  left_hand_idle: Left_Arm_Idle_02
+  OH_Light_Attack_1: OH_Light_Attack_01
+  OH_Light_Attack_2: OH_Light_Attack_02
+  OH_Heavy_Attack_1: OH_Heavy_Attack_01
+  baseStamina: 20
+  lightAttackMultiplier: 1
+  heavyAttackMultiplier: 2
