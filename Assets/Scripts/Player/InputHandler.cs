@@ -19,6 +19,8 @@ namespace SG
         public bool jump_Input;
         public bool inventory_Input;
         public bool lockOnInput;
+        public bool right_Stick_Right_Input;
+        public bool right_Stick_Left_Input;
 
         public bool d_Pad_Up;
         public bool d_Pad_Down;
@@ -68,7 +70,10 @@ namespace SG
                 inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
                 inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
                 inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
-            }
+                inputActions.PlayerMovement.LockOnTargetRight.performed += i => right_Stick_Right_Input = true;
+                inputActions.PlayerMovement.LockOnTargetLeft.performed += i => right_Stick_Left_Input = true;
+
+    }
 
             inputActions.Enable();
         }
@@ -184,7 +189,6 @@ namespace SG
         {
             if(lockOnInput && lockOnFlag == false)
             {
-                cameraHandler.ClearLockOnTargets();
                 lockOnInput = false;
                 cameraHandler.HandleLockOn();
                 if(cameraHandler.nearestLockOnTarget != null)
@@ -198,6 +202,25 @@ namespace SG
                 lockOnInput = false;
                 lockOnFlag = false;
                 cameraHandler.ClearLockOnTargets();
+            }
+
+            if (lockOnFlag && right_Stick_Left_Input)
+            {
+                right_Stick_Left_Input = false;
+                cameraHandler.HandleLockOn();
+                if (cameraHandler.leftLockTarget != null)
+                {
+                    cameraHandler.currentLockOnTarget = cameraHandler.leftLockTarget;
+                }
+            }
+            else if (lockOnFlag && right_Stick_Right_Input)
+            {
+                right_Stick_Right_Input = false;
+                cameraHandler.HandleLockOn();
+                if (cameraHandler.rightLockTarget != null)
+                {
+                    cameraHandler.currentLockOnTarget = cameraHandler.rightLockTarget;
+                }
             }
         }
 
