@@ -67003,7 +67003,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1930012455
@@ -67031,7 +67031,7 @@ MonoBehaviour:
   walkingSpeed: 1
   sprintSpeed: 7
   rotationSpeed: 10
-  fallingSpeed: 120
+  fallingSpeed: 100
 --- !u!114 &1930012456
 MonoBehaviour:
   m_ObjectHideFlags: 0
