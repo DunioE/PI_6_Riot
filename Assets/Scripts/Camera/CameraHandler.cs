@@ -142,6 +142,7 @@ namespace SG
 
         public void HandleLockOn()
         {
+            availableTargets.Clear();
             float shortestDistance = Mathf.Infinity;
             float shortestDistanceOfLeftTarget = Mathf.Infinity;
             float shortestDistanceOfRightTarget = Mathf.Infinity;
@@ -195,15 +196,15 @@ namespace SG
                     var distanceFromLeftTarget = currentLockOnTarget.transform.position.x - availableTargets[k].transform.position.x;
                     var distanceFromRightTarget = currentLockOnTarget.transform.position.x + availableTargets[k].transform.position.x;
 
-                    if (relativeEnemyPosition.x > 0.00)
+                    if (relativeEnemyPosition.x > 0.00 && distanceFromLeftTarget < shortestDistanceOfLeftTarget)
                     {
                         shortestDistanceOfLeftTarget = distanceFromLeftTarget;
                         leftLockTarget = availableTargets[k].lockOnTransform;
                     }
 
-                    if (relativeEnemyPosition.x < 0.00)
+                    if (relativeEnemyPosition.x < 0.00 && Mathf.Abs(distanceFromRightTarget) < shortestDistanceOfRightTarget)
                     {
-                        shortestDistanceOfRightTarget = distanceFromRightTarget;
+                        shortestDistanceOfRightTarget = Mathf.Abs(distanceFromRightTarget);
                         rightLockTarget = availableTargets[k].lockOnTransform;
                     }
 

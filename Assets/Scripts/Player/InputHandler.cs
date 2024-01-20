@@ -212,6 +212,7 @@ namespace SG
                 {
                     cameraHandler.currentLockOnTarget = cameraHandler.leftLockTarget;
                 }
+                Debug.Log("Switched to left target");
             }
             else if (lockOnFlag && right_Stick_Right_Input)
             {
@@ -221,6 +222,7 @@ namespace SG
                 {
                     cameraHandler.currentLockOnTarget = cameraHandler.rightLockTarget;
                 }
+                Debug.Log("Switched to right target");
             }
 
             cameraHandler.SetCameraHeight();
