@@ -2,43 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStats : MonoBehaviour
+namespace SG
 {
-    public int healthLevel = 10;
-    public int maxHealth;
-    public int currentHealth;
-
-    Animator animator;
-
-    private void Awake()
+    public class EnemyStats : CharacterStats
     {
-        animator = GetComponentInChildren<Animator>();
-    }
+        Animator animator;
 
-    void Start()
-    {
-        maxHealth = SetMaxHealthFromHealthLevel();
-        currentHealth = maxHealth;
-    }
-
-    private int SetMaxHealthFromHealthLevel()
-    {
-        maxHealth = healthLevel * 10;
-        return maxHealth;
-    }
-
-    public void TakeDamage(int damage)
-    {
-        currentHealth = currentHealth - damage;
-
-        animator.Play("DamageE_01");
-        //Anim dano inimigo
-
-        if (currentHealth <= 0)
+        private void Awake()
         {
-            currentHealth = 0;
-            animator.Play("DeadE_01");
-            //Anim morte inimigo
+            animator = GetComponentInChildren<Animator>();
+        }
+
+        void Start()
+        {
+            maxHealth = SetMaxHealthFromHealthLevel();
+            currentHealth = maxHealth;
+        }
+
+        private int SetMaxHealthFromHealthLevel()
+        {
+            maxHealth = healthLevel * 10;
+            return maxHealth;
+        }
+
+        public void TakeDamage(int damage)
+        {
+            currentHealth = currentHealth - damage;
+
+            animator.Play("DamageE_01");
+            //Anim dano inimigo
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                animator.Play("DeadE_01");
+                //Anim morte inimigo
+            }
         }
     }
 }
