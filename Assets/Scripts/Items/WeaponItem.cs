@@ -19,6 +19,9 @@ namespace SG
         public string OH_Light_Attack_1;
         public string OH_Light_Attack_2;
         public string OH_Heavy_Attack_1;
+        public string th_light_attack_1;
+        public string th_light_attack_2;
+        public string th_heavy_attack_1;
 
         [Header("Stamina Costs")]
         public int baseStamina;

@@ -10,6 +10,7 @@ namespace SG
 
         WeaponHolderSlot leftHandSlot;
         WeaponHolderSlot rightHandSlot;
+        WeaponHolderSlot backSlot;
 
         DamageCollider leftHandDamageCollider;
         DamageCollider rightHandDamageCollider;
@@ -39,6 +40,11 @@ namespace SG
                 {
                     rightHandSlot = weaponSlot;
                 }
+                else if(weaponSlot.isBackSlot)
+                {
+                    backSlot = weaponSlot;
+                }
+
             }
         }
 
@@ -46,6 +52,7 @@ namespace SG
         {
             if(isLeft)
             {
+                leftHandSlot.currentWeapon = weaponItem;
                 leftHandSlot.LoadWeaponModel(weaponItem);
                 LoadLeftWeaponDamageCollider();
                 quickSlotsUI.UpdateWeaponQuickSlotsUI(true, weaponItem);
@@ -64,6 +71,8 @@ namespace SG
             {
                 if(inputHandler.twoHandFlag)
                 {
+                    backSlot.LoadWeaponModel(leftHandSlot.currentWeapon);
+                    leftHandSlot.UnloadWeaponAndDestroy();
                     animator.CrossFade(weaponItem.th_idle, 0.2f);
                 }
                 else
@@ -71,6 +80,8 @@ namespace SG
                     #region Handle Right Weapon Idle Animations
 
                     animator.CrossFade("Both Arms Empty", 0.2f);
+
+                    backSlot.UnloadWeaponAndDestroy();
 
                     if (weaponItem != null)
                     {
@@ -83,6 +94,7 @@ namespace SG
                     #endregion
                 }
 
+                rightHandSlot.currentWeapon = weaponItem;
                 rightHandSlot.LoadWeaponModel(weaponItem);
                 LoadRightWeaponDamageCollider();
                 quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
