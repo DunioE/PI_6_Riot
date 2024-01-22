@@ -6,13 +6,25 @@ namespace SG
 {
     public class CombatStanceState : State
     {
+        public AttackState attackState;
+        public PursueTargetState pursueTargetState;
+
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
-            //verifica a distancia para atacar
-            //se estiver na distancia certa prossegue para o ataque
-            //se estiver em um cooldown após o ataque ele volta para este estado
-            //se o alvo estiver longe ele volta para este estado de perseguissão
-            return this;
+            enemyManager.distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
+
+            if (enemyManager.currentRecoveryTime <= 0 && enemyManager.distanceFromTarget <= enemyManager.maximumAttackRange)
+            {
+                return attackState;
+            }
+            else if (enemyManager.distanceFromTarget > enemyManager.maximumAttackRange)
+            {
+                return pursueTargetState;
+            }
+            else
+            {
+                return this;
+            }
         }
     }
 }
