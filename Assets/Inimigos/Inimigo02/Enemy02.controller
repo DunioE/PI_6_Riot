@@ -792,31 +792,31 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: canDoCombo
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: isInAir
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Horizontal
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Vertical
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -1028,7 +1028,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -203655887218126122, guid: c95ed6efdbce19c4baede67a26ac0305, type: 3}
+    m_Motion: {fileID: -203655887218126122, guid: 6a20ea9eceb55cd4383a3afccbe8d85b, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -1044,7 +1044,7 @@ BlendTree:
     m_DirectBlendParameter: Vertical
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 2cf6b89305a420f48a089f87c93166a1, type: 2}
+    m_Motion: {fileID: -203655887218126122, guid: 942694d1cbb32c34aaf664f34ecb6424, type: 3}
     m_Threshold: 0.18181819
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -1209,7 +1209,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EnemyAttack_02
+  m_Name: EnemyAttack_03
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1223,7 +1223,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b2bf4824adf7e1244a92e5cc92ede7db, type: 2}
+  m_Motion: {fileID: 7400000, guid: d3a00016393eb0443a9398b448da5fc2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
