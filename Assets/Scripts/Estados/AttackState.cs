@@ -32,6 +32,7 @@ namespace SG
                     if (viewableAngle <= currentAttack.maximumAttackAngle &&
                         viewableAngle >= currentAttack.minimumAttackAngle)
                     {
+
                         if(enemyManager.currentRecoveryTime <= 0 && enemyManager.isPreformingAction == false)
                         {
                             enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);

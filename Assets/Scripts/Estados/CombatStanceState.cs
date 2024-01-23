@@ -13,7 +13,7 @@ namespace SG
         {
             float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
 
-            if(enemyManager.isPreformingAction)
+            if (enemyManager.isPreformingAction)
             {
                 enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
             }

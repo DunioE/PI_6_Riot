@@ -44,6 +44,7 @@ namespace SG
         PlayerManager playerManager;
         WeaponSlotManager weaponSlotManager;
         CameraHandler cameraHandler;
+        AnimatorHandler animatorHandler;
         UIManager uiManager;
 
         Vector2 movementInput;
@@ -57,6 +58,7 @@ namespace SG
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
             uiManager = Object.FindFirstObjectByType<UIManager>();
             cameraHandler = Object.FindFirstObjectByType<CameraHandler>();
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
 
         public void OnEnable()
@@ -146,6 +148,8 @@ namespace SG
                         return;
                     if (playerManager.canDoCombo)
                         return;
+
+                    animatorHandler.anim.SetBool("isUsingRightHand", true);
                     playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
                 }
 
