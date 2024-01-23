@@ -17,6 +17,7 @@ namespace SG
         public Rigidbody enemyRigidBody;
 
         public bool isPreformingAction;
+        public bool isInteracting;
         public float distanceFromTarget;
         public float rotationSpeed = 15;
         public float maximumAttackRange = 1.5f;
@@ -48,6 +49,8 @@ namespace SG
         private void Update()
         {
             HandleRecoveryTimer();
+
+            isInteracting = enemyAnimatorManager.anim.GetBool("isInteracting");
         }
 
         private void FixedUpdate()
