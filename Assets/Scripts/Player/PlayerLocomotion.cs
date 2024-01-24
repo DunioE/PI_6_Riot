@@ -65,6 +65,12 @@ namespace SG
             Physics.IgnoreCollision(characterCollider, characterCollisionBlockerCollider, true);
         }
 
+        public float GetMovementSpeed()
+        {
+            return movementSpeed;
+        }
+
+
         #region Movement
         Vector3 normalVector;
         Vector3 targetPosition;
