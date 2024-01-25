@@ -136,5 +136,17 @@ namespace SG
 
         #endregion
 
+        #region Handle Stamina Drain
+        public void DrainStaminaLightAttack()
+        {
+            playerStats.TakeStaminaDamage(Mathf.RoundToInt(attackingWeapon.baseStamina * attackingWeapon.lightAttackMultiplier));
+        }
+
+        public void DrainStaminaHeavyAttack()
+        {
+            playerStats.TakeStaminaDamage(Mathf.RoundToInt(attackingWeapon.baseStamina * attackingWeapon.heavyAttackMultiplier));
+        }
+        #endregion
+
     }
 }

@@ -6,13 +6,18 @@ namespace SG
 {
     public class PlayerStats : CharacterStats
     {
-
+        PlayerManager playerManager;
         HealthBar healthBar;
         StaminaBar staminaBar;
         AnimatorHandler animatorHandler;
 
-        private void Awake ()
+        public float staminaRegenerationAmount = 1;
+        public float staminaRegentionTime = 0;
+
+        private void Awake()
         {
+            playerManager = GetComponent<PlayerManager>();
+
             healthBar = Object.FindFirstObjectByType<HealthBar>();
             staminaBar = Object.FindFirstObjectByType<StaminaBar>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
@@ -34,7 +39,7 @@ namespace SG
             return maxHealth;
         }
 
-        private int SetMaxStaminaFromStaminaLevel()
+        private float SetMaxStaminaFromStaminaLevel()
         {
             maxStamina = staminaLevel * 10;
             return maxStamina;
@@ -42,6 +47,9 @@ namespace SG
 
         public void TakeDamage(int damage)
         {
+            if (playerManager.isInvulnerable)
+                return;
+
             if (isDead)
                 return;
 
@@ -64,6 +72,25 @@ namespace SG
         {
             currentStamina = currentStamina - damage;
             staminaBar.SetCurrentStamina(currentStamina);
+        }
+
+        public void RegenerateStamina()
+        {
+            if(playerManager.isInteracting)
+            {
+                staminaRegentionTime = 0;
+            }
+            else
+            {
+                staminaRegentionTime += Time.deltaTime;
+
+                if (currentStamina < maxStamina && staminaRegentionTime > 0.5f)
+                {
+                    currentStamina += staminaRegenerationAmount * Time.deltaTime;
+                    staminaBar.SetCurrentStamina(Mathf.RoundToInt(currentStamina));
+                }
+            }
+
         }
 
     }
