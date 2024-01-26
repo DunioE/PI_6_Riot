@@ -12,12 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa9c09d32efcc447870d5aa77cfc8dc, type: 3}
   m_Name: Unarmed
   m_EditorClassIdentifier: 
-  itemicon: {fileID: 0}
+  itemIcon: {fileID: 0}
   itemName: 
   modelPrefab: {fileID: 6356065728598676159, guid: b3a3e2190523f9e4eb558a442d998cd3, type: 3}
   isUnarmed: 1
   right_hand_idle: Right Arm Empty
   left_hand_idle: Left Arm Empty
+  th_idle: 
   OH_Light_Attack_1: 
   OH_Light_Attack_2: 
   OH_Heavy_Attack_1: 
+  th_light_attack_1: 
+  th_light_attack_2: 
+  th_heavy_attack_1: 
+  baseStamina: 0
+  lightAttackMultiplier: 0
+  heavyAttackMultiplier: 0
+  isSpellCaster: 0
+  isFaithCaster: 0
+  isPyroCaster: 0
+  isMeleeWeapon: 1

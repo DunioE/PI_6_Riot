@@ -52905,6 +52905,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e406ab4033a51641905c0d6343b6435, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1960525237}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e406ab4033a51641905c0d6343b6435, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1960525238}
     - targetCorrespondingSourceObject: {fileID: -4728426434207774260, guid: 7e406ab4033a51641905c0d6343b6435, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1490183731}
@@ -71018,7 +71021,6 @@ GameObject:
   - component: {fileID: 1930012456}
   - component: {fileID: 1930012455}
   - component: {fileID: 1930012458}
-  - component: {fileID: 1930012459}
   - component: {fileID: 1930012460}
   m_Layer: 12
   m_Name: Player
@@ -71196,6 +71198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a014cfa9edc9749a21c5711da36a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSpell: {fileID: 0}
   rightWeapon: {fileID: 11400000, guid: 428181e489ce5474e9edb784c506462a, type: 2}
   leftWeapon: {fileID: 11400000, guid: 428181e489ce5474e9edb784c506462a, type: 2}
   unarmedWeapon: {fileID: 11400000, guid: eb5adde9c13338a42abdc0b04694e0ad, type: 2}
@@ -71208,19 +71211,6 @@ MonoBehaviour:
   currentRightWeaponIndex: -1
   currentLeftWeaponIndex: -1
   weaponsInventory: []
---- !u!114 &1930012459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1930012451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b593d0af5416b34e8b3a3fa046bd55e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lastAttack: 
 --- !u!114 &1930012460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71241,6 +71231,7 @@ MonoBehaviour:
   currentStamina: 0
   isDead: 0
   staminaRegenerationAmount: 30
+  staminaRegentionTime: 0
 --- !u!1001 &1930127523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72123,6 +72114,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackingWeapon: {fileID: 0}
+--- !u!114 &1960525238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960525235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b593d0af5416b34e8b3a3fa046bd55e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastAttack: 
 --- !u!1001 &1964133293
 PrefabInstance:
   m_ObjectHideFlags: 0
