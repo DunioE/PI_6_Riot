@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SG
 {
-    public class SpellItem : MonoBehaviour
+    public class SpellItem : Item
     {
         public GameObject spellWarmUpFX;
         public GameObject spellCastFX;
@@ -19,12 +19,12 @@ namespace SG
         [TextArea]
         public string spellDescription;
 
-        public virtual void AttemptToCastSpell()
+        public virtual void AttemptToCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats)
         {
             Debug.Log("You attempt to cast a spell!");
         }
 
-        public virtual void SuccessfullyCastSpell()
+        public virtual void SuccessfullyCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats)
         {
             Debug.Log("You successfully cast a spell!");
         }
