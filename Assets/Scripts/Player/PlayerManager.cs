@@ -58,6 +58,7 @@ namespace SG
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
             playerLocomotion.HandleJumping();
             playerStats.RegenerateStamina();
+            playerStats.RegenerateFocus();
 
             CheckForInteractableObject();
         }

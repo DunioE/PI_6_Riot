@@ -12,17 +12,19 @@ namespace SG
 
         public override void AttemptToCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats)
         {
+            base.AttemptToCastSpell(animatorHandler, playerStats);
             GameObject instantiatedWarmUpSpellFX = Instantiate(spellWarmUpFX, animatorHandler.transform);
             animatorHandler.PlayTargetAnimation(spellAnimation, true);
-            Debug.Log("Attempt Spell");
+            Debug.Log("Tentativa de iniciar feitiço");
 
         }
 
         public override void SuccessfullyCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats)
         {
+            base.SuccessfullyCastSpell(animatorHandler, playerStats);
             GameObject instantiatedSpellFX = Instantiate(spellCastFX, animatorHandler.transform);
             playerStats.HealPlayer(healAmount);
-            Debug.Log("Spell Cast Succesful");
+            Debug.Log("Feitiço Iniciado");
 
         }
     }

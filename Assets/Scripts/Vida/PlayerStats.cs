@@ -9,10 +9,15 @@ namespace SG
         PlayerManager playerManager;
         HealthBar healthBar;
         StaminaBar staminaBar;
+        FocusPointsBar focusPointsBar;
         AnimatorHandler animatorHandler;
 
         public float staminaRegenerationAmount = 1;
-        public float staminaRegentionTime = 0;
+        public float staminaRegenTimer = 0;
+
+        public float focusRegenerationAmount = 1;
+        public float focusRegenTime = 0;
+
 
         private void Awake()
         {
@@ -20,6 +25,7 @@ namespace SG
 
             healthBar = Object.FindFirstObjectByType<HealthBar>();
             staminaBar = Object.FindFirstObjectByType<StaminaBar>();
+            focusPointsBar = Object.FindFirstObjectByType<FocusPointsBar>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
 
@@ -31,6 +37,11 @@ namespace SG
 
             maxStamina = SetMaxStaminaFromStaminaLevel();
             currentStamina = maxStamina;
+
+            maxFocusPoints = SetMaxFocusPointsFromFocusLevel();
+            currentFocusPoints = maxFocusPoints;
+            focusPointsBar.SetMaxFocusPoints(maxFocusPoints);
+            focusPointsBar.SetCurrentFocusPoints(currentFocusPoints);
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -43,6 +54,12 @@ namespace SG
         {
             maxStamina = staminaLevel * 10;
             return maxStamina;
+        }
+
+        private float SetMaxFocusPointsFromFocusLevel()
+        {
+            maxFocusPoints = focusLevel * 10;
+            return maxFocusPoints;
         }
 
         public void TakeDamage(int damage)
@@ -78,13 +95,13 @@ namespace SG
         {
             if(playerManager.isInteracting)
             {
-                staminaRegentionTime = 0;
+                staminaRegenTimer = 0;
             }
             else
             {
-                staminaRegentionTime += Time.deltaTime;
+                staminaRegenTimer += Time.deltaTime;
 
-                if (currentStamina < maxStamina && staminaRegentionTime > 0.5f)
+                if (currentStamina < maxStamina && staminaRegenTimer > 0.5f)
                 {
                     currentStamina += staminaRegenerationAmount * Time.deltaTime;
                     staminaBar.SetCurrentStamina(Mathf.RoundToInt(currentStamina));
@@ -105,5 +122,34 @@ namespace SG
             healthBar.SetCurrentHealth(currentHealth);
         }
 
+        public void DeductFocusPoints(int focusPoints)
+        {
+            currentFocusPoints = currentFocusPoints - focusPoints;
+
+            if (currentFocusPoints < 0)
+            {
+                currentFocusPoints = 0;
+            }
+
+            focusPointsBar.SetCurrentFocusPoints(currentFocusPoints);
+        }
+
+        public void RegenerateFocus()
+        {
+            if (playerManager.isInteracting)
+            {
+                focusRegenTime = 0;
+            }
+            else
+            {
+                focusRegenTime += Time.deltaTime;
+
+                if (currentFocusPoints < maxFocusPoints && focusRegenTime > 0.5f)
+                {
+                    currentFocusPoints += focusRegenerationAmount * Time.deltaTime;
+                    focusPointsBar.SetCurrentFocusPoints(Mathf.RoundToInt(currentFocusPoints));
+                }
+            }
+        }
     }
 }
