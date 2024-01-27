@@ -10,6 +10,7 @@ namespace SG
         Animator anim;
         CameraHandler cameraHandler;
         PlayerStats playerStats;
+        AnimatorHandler animatorHandler;
         PlayerLocomotion playerLocomotion;
 
         InteractableUI interactableUI;
@@ -30,11 +31,8 @@ namespace SG
         private void Awake()
         {
             cameraHandler = Object.FindFirstObjectByType<CameraHandler>();
-        }
-
-        void Start()
-        {
             inputHandler = GetComponent<InputHandler>();
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
             anim = GetComponentInChildren<Animator>();
             playerStats = GetComponent<PlayerStats>();
             playerLocomotion = GetComponent<PlayerLocomotion>();
@@ -52,7 +50,9 @@ namespace SG
             isInvulnerable = anim.GetBool("isInvulnerable");
             anim.SetBool("isInAir", isInAir);
 
+
             inputHandler.TickInput(delta);
+            animatorHandler.canRotate = anim.GetBool("canRotate");
             playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleRollingAndSprinting(delta);
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
@@ -72,6 +72,8 @@ namespace SG
                 cameraHandler.FollowTarget(delta);
                 cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
             }
+
+            playerLocomotion.HandleRotation(delta);
         }
 
         private void LateUpdate()
