@@ -21,13 +21,19 @@ namespace SG
         public float rotationSpeed = 15;
         public float maximumAttackRange = 1.5f;
 
+        [Header("Combat Flags")]
+        public bool canDoCombo;
+
         [Header("A.I Settings")]
         public float detectionRadius = 20;
         //maior e menor funcionam como o campo de visão do inimigo
         public float maximumDetectionAngle = 50;
         public float minimumDetectionAngle = -50;
-
         public float currentRecoveryTime = 0;
+
+        [Header("A.I Combat Settings")]
+        public bool AllowAIToPerformCombos;
+        public float comboLikelyHood;
 
         private void Awake()
         {
@@ -47,13 +53,16 @@ namespace SG
         private void Update()
         {
             HandleRecoveryTimer();
+            HandleStateMachine();
 
             isInteracting = enemyAnimatorManager.anim.GetBool("isInteracting");
+            canDoCombo = enemyAnimatorManager.anim.GetBool("canDoCombo");
         }
 
-        private void FixedUpdate()
+        private void LateUpdate()
         {
-            HandleStateMachine();
+            navmeshAgent.transform.localPosition = Vector3.zero;
+            navmeshAgent.transform.localRotation = Quaternion.identity;
         }
 
         private void HandleStateMachine()

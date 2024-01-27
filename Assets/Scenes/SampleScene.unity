@@ -29668,10 +29668,13 @@ MonoBehaviour:
   isInteracting: 0
   rotationSpeed: 15
   maximumAttackRange: 2
+  canDoCombo: 0
   detectionRadius: 20
   maximumDetectionAngle: 50
   minimumDetectionAngle: -50
   currentRecoveryTime: 0
+  AllowAIToPerformCombos: 1
+  comboLikelyHood: 100
 --- !u!114 &999192778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31894,6 +31897,7 @@ MonoBehaviour:
   enemyAttacks:
   - {fileID: 11400000, guid: e6f0880ee1cfb4840b9e3a736c6b1f52, type: 2}
   - {fileID: 11400000, guid: c2b114582c1187847bd3d9532581ced1, type: 2}
+  - {fileID: 11400000, guid: 061602fe1ca0b4247b5e45bc420563c6, type: 2}
   currentAttack: {fileID: 0}
 --- !u!4 &1084229589
 Transform:
@@ -52011,10 +52015,13 @@ MonoBehaviour:
   isInteracting: 0
   rotationSpeed: 15
   maximumAttackRange: 2
+  canDoCombo: 0
   detectionRadius: 20
   maximumDetectionAngle: 50
   minimumDetectionAngle: -50
   currentRecoveryTime: 0
+  AllowAIToPerformCombos: 0
+  comboLikelyHood: 0
 --- !u!114 &1415846542
 MonoBehaviour:
   m_ObjectHideFlags: 0

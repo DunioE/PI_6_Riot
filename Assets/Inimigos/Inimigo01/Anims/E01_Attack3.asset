@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 756a2b559de0d9a40a224d42a20a1120, type: 3}
-  m_Name: E01_Attack
+  m_Name: E01_Attack3
   m_EditorClassIdentifier: 
-  actionAnimation: E01_Attack
+  actionAnimation: E01_Attack3
   canCombo: 1
   comboAction: {fileID: 11400000, guid: c2b114582c1187847bd3d9532581ced1, type: 2}
   attackScore: 3
