@@ -125,7 +125,21 @@ namespace SG
                 {
                     if(playerStats.currentFocusPoints >= playerInventory.currentSpell.focusPointCost)
                     {
-                        playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats);
+                        playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats, weaponSlotManager);
+                    }
+                    else
+                    {
+                        animatorHandler.PlayTargetAnimation("Shrug", true);
+                    }
+                }
+            }
+            else if (weapon.isPyroCaster)
+            {
+                if (playerInventory.currentSpell != null && playerInventory.currentSpell.isPyroSpell)
+                {
+                    if (playerStats.currentFocusPoints >= playerInventory.currentSpell.focusPointCost)
+                    {
+                        playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats, weaponSlotManager);
                     }
                     else
                     {
@@ -138,6 +152,7 @@ namespace SG
         private void SuccessfullyCastSpell()
         {
             playerInventory.currentSpell.SuccessfullyCastSpell(animatorHandler, playerStats);
+            animatorHandler.anim.SetBool("isFiringSpell", true);
         }
 
         #endregion

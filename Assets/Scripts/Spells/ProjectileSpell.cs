@@ -4,28 +4,26 @@ using UnityEngine;
 
 namespace SG
 {
-    [CreateAssetMenu(menuName = "Spells/Healing Spell")]
+    [CreateAssetMenu(menuName = "Spells/Projectile Spell")]
 
-    public class HealingSpell : SpellItem
+    public class ProjectileSpell :  SpellItem
     {
-        public int healAmount;
+        public float baseDamage;
+        public float projectileVelocity;
+        Rigidbody rigidBody;
 
         public override void AttemptToCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats, WeaponSlotManager weaponSlotManager)
         {
             base.AttemptToCastSpell(animatorHandler, playerStats, weaponSlotManager);
-            GameObject instantiatedWarmUpSpellFX = Instantiate(spellWarmUpFX, animatorHandler.transform);
+            GameObject instantiatedWarmUpSpellFX = Instantiate(spellWarmUpFX, weaponSlotManager.rightHandSlot.transform);
+            instantiatedWarmUpSpellFX.transform.localScale = new Vector3(100, 100, 100);
             animatorHandler.PlayTargetAnimation(spellAnimation, true);
-            Debug.Log("Tentativa de iniciar feitiço");
 
         }
 
         public override void SuccessfullyCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats)
         {
             base.SuccessfullyCastSpell(animatorHandler, playerStats);
-            GameObject instantiatedSpellFX = Instantiate(spellCastFX, animatorHandler.transform);
-            playerStats.HealPlayer(healAmount);
-            Debug.Log("Feitiço Iniciado");
-
         }
     }
 }
