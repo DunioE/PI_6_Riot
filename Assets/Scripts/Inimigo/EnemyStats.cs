@@ -28,7 +28,7 @@ namespace SG
             return maxHealth;
         }
 
-        public void TakeDamage(int damage)
+        public override void TakeDamage(int damage)
         {
             if (isDead)
                 return;

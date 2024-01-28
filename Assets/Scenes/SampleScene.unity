@@ -29784,6 +29784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 99136797}
+  isFiringSpell: 0
   currentState: {fileID: 144705346}
   currentTarget: {fileID: 0}
   navmeshAgent: {fileID: 0}
@@ -52133,6 +52134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 651364464}
+  isFiringSpell: 0
   currentState: {fileID: 889723197}
   currentTarget: {fileID: 0}
   navmeshAgent: {fileID: 0}
@@ -72722,6 +72724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 1987334242}
+  isFiringSpell: 0
   interactableUIGameObject: {fileID: 5983168048591481876}
   itemInteractableGameObject: {fileID: 4653792762606622669}
   isInteracting: 0

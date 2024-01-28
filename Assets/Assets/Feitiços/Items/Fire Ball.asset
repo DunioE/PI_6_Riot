@@ -12,15 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fefa59412967d3439e4543ea72cd281, type: 3}
   m_Name: Fire Ball
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 97a1cb20220493c479eb65a0df10600a, type: 3}
   itemName: Fire Ball
-  spellWarmUpFX: {fileID: 834284093387080715, guid: 06295324690c97b48bc40806591076ee, type: 3}
-  spellCastFX: {fileID: 1990837766928022770, guid: 13fe116c8ef20b34281aaf8231938e22, type: 3}
+  spellWarmUpFX: {fileID: 7080613795031085441, guid: 8f92040d30f285b459fa88db17227e78, type: 3}
+  spellCastFX: {fileID: 834284093387080715, guid: 06295324690c97b48bc40806591076ee, type: 3}
   spellAnimation: Spell_Throw
-  focusPointCost: 0
+  focusPointCost: 80
   isFaithSpell: 0
   isMagicSpell: 0
   isPyroSpell: 1
   spellDescription: 
-  baseDamage: 0
-  projectileVelocity: 0
+  baseDamage: 25
+  projectileForwardVelocity: 700
+  projectileUpwardVelocity: 100
+  projectileMass: 25
+  isEffectedByGravity: 0

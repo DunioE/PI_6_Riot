@@ -7,6 +7,7 @@ namespace SG
     public class DamageCollider : MonoBehaviour
     {
         Collider damageCollider;
+        public bool enabledDamageCooliderOnStartUp = false;
 
         public int currentWeaponDamage = 25;
 
@@ -15,7 +16,7 @@ namespace SG
             damageCollider = GetComponent<Collider>();
             damageCollider.gameObject.SetActive(true);
             damageCollider.isTrigger = true;
-            damageCollider.enabled = false;
+            damageCollider.enabled = enabledDamageCooliderOnStartUp;
         }
 
         public void EnableDamageCollider()

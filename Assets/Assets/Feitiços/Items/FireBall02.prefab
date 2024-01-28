@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1241247906437518810}
-  - component: {fileID: 476578213740505727}
   m_Layer: 0
   m_Name: FireBall02
   m_TagString: Untagged
@@ -33,18 +32,6 @@ Transform:
   - {fileID: 444328618632433308}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &476578213740505727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834284093387080715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6735b1d2283eee345b8efd15d9d5edb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1325819049645470438
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 1325819049645470438}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.00439, y: 0, z: -0}
   m_LocalScale: {x: 0.27006832, y: 0.27006826, z: 0.27006832}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -915,7 +902,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 20
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1353,7 +1340,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0.088679194, b: 0.088679194, a: 1}
+        key0: {r: 1, g: 0.4859993, b: 0.09019607, a: 1}
         key1: {r: 0.98399997, g: 1, b: 0, a: 1}
         key2: {r: 1, g: 0.088679194, b: 0.088679194, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -4897,15 +4884,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7577261054060605243}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27401218, y: -0.038557746, z: 0.8169558, w: 0.5059783}
-  m_LocalPosition: {x: 1.31287, y: -0.02695, z: 0.01028}
+  m_LocalRotation: {x: 0.5288923, y: -0.30870157, z: 0.6880648, w: 0.38928556}
+  m_LocalPosition: {x: 0.0001196289, y: -0.000090968606, z: -0.00030219197}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6988593282312801981}
   - {fileID: 2323530065603175915}
   m_Father: {fileID: 1241247906437518810}
-  m_LocalEulerAnglesHint: {x: 19.894, y: 25.762, z: 121.05}
+  m_LocalEulerAnglesHint: {x: 56.782, y: 62.854, z: 157.554}
 --- !u!1 &9037981628637459622
 GameObject:
   m_ObjectHideFlags: 0

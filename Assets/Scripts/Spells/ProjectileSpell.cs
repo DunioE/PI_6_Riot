@@ -8,8 +8,14 @@ namespace SG
 
     public class ProjectileSpell :  SpellItem
     {
+        [Header("Projectile Damage")]
         public float baseDamage;
-        public float projectileVelocity;
+
+        [Header("Projectile Physics")]
+        public float projectileForwardVelocity;
+        public float projectileUpwardVelocity;
+        public float projectileMass;
+        public bool isEffectedByGravity;
         Rigidbody rigidBody;
 
         public override void AttemptToCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats, WeaponSlotManager weaponSlotManager)
@@ -21,9 +27,27 @@ namespace SG
 
         }
 
-        public override void SuccessfullyCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats)
+        public override void SuccessfullyCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats, CameraHandler cameraHandler, WeaponSlotManager weaponSlotManager)
         {
-            base.SuccessfullyCastSpell(animatorHandler, playerStats);
+            base.SuccessfullyCastSpell(animatorHandler, playerStats, cameraHandler, weaponSlotManager);
+            GameObject instantiatedspellFX = Instantiate(spellCastFX, weaponSlotManager.rightHandSlot.transform.position, cameraHandler.cameraPivotTransform.rotation);
+            rigidBody = instantiatedspellFX.GetComponent<Rigidbody>();
+            //spel IDamagecolliden = instantiatedSpellIFX.GetComponent «Spell Danagecollider›(Fl
+
+            if(cameraHandler.currentLockOnTarget != null)
+            {
+                instantiatedspellFX.transform.LookAt(cameraHandler.currentLockOnTarget.transform);
+            }
+            else
+            {
+                instantiatedspellFX.transform.rotation = Quaternion.Euler(cameraHandler.cameraPivotTransform.eulerAngles.x, playerStats.transform.eulerAngles.y, 0);
+            }
+
+            rigidBody.AddForce(instantiatedspellFX.transform.forward * projectileForwardVelocity);
+            rigidBody.AddForce(instantiatedspellFX.transform.up * projectileUpwardVelocity);
+            rigidBody.useGravity = isEffectedByGravity;
+            rigidBody.mass = projectileMass;
+            instantiatedspellFX.transform.parent = null;
         }
     }
 }

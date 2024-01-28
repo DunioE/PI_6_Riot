@@ -62,7 +62,7 @@ namespace SG
             return maxFocusPoints;
         }
 
-        public void TakeDamage(int damage)
+        public override void TakeDamage(int damage)
         {
             if (playerManager.isInvulnerable)
                 return;

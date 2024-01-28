@@ -19,5 +19,10 @@ namespace SG
         public float currentFocusPoints;
 
         public bool isDead;
+
+        public virtual void TakeDamage(int damage)
+        {
+
+        }
     }
 }

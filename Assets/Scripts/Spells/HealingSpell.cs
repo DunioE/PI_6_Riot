@@ -19,9 +19,9 @@ namespace SG
 
         }
 
-        public override void SuccessfullyCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats)
+        public override void SuccessfullyCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats, CameraHandler cameraHandler, WeaponSlotManager weaponSlotManager)
         {
-            base.SuccessfullyCastSpell(animatorHandler, playerStats);
+            base.SuccessfullyCastSpell(animatorHandler, playerStats, cameraHandler, weaponSlotManager);
             GameObject instantiatedSpellFX = Instantiate(spellCastFX, animatorHandler.transform);
             playerStats.HealPlayer(healAmount);
             Debug.Log("Feitiço Iniciado");

@@ -27,7 +27,7 @@ namespace SG
             Debug.Log("You attempt to cast a spell!");
         }
 
-        public virtual void SuccessfullyCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats)
+        public virtual void SuccessfullyCastSpell(AnimatorHandler animatorHandler, PlayerStats playerStats, CameraHandler cameraHandler, WeaponSlotManager weaponSlotManager)
         {
             Debug.Log("You successfully cast a spell!");
             playerStats.DeductFocusPoints(focusPointCost);
