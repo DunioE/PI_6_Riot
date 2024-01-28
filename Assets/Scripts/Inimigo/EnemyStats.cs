@@ -8,6 +8,8 @@ namespace SG
     {
         Animator animator;
 
+        public UIEnemyHealthBar enemyHealthBar;
+
         private void Awake()
         {
             animator = GetComponentInChildren<Animator>();
@@ -17,6 +19,7 @@ namespace SG
         {
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
+            enemyHealthBar.SetMaxHealth(maxHealth);
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -31,16 +34,15 @@ namespace SG
                 return;
 
             currentHealth = currentHealth - damage;
+            enemyHealthBar.SetHealth(currentHealth);
 
             animator.Play("DamageE_01");
-            //Anim dano inimigo
 
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
                 animator.Play("DeadE_01");
                 isDead = true;
-                //Anim morte inimigo
             }
         }
     }
