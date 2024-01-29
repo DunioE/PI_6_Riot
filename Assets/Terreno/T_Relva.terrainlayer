@@ -7,10 +7,10 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: T_Relva
-  m_DiffuseTexture: {fileID: 2800000, guid: a081085a22bb0f643bf8f9a21f02ef4a, type: 3}
-  m_NormalMapTexture: {fileID: 2800000, guid: 6f6eb1c1b4ce2654199479b86f8f337e, type: 3}
+  m_DiffuseTexture: {fileID: 2800000, guid: 9cd0393015da37c4d978078b8871159c, type: 3}
+  m_NormalMapTexture: {fileID: 2800000, guid: 2b8735c22674a654c80a491eeffbe725, type: 3}
   m_MaskMapTexture: {fileID: 0}
-  m_TileSize: {x: 5, y: 5}
+  m_TileSize: {x: 7, y: 7}
   m_TileOffset: {x: 0, y: 0}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}
   m_Metallic: 0
