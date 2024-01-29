@@ -7,19 +7,27 @@ namespace SG
     public class EnemyStats : CharacterStats
     {
         Animator animator;
-
+        EnemyBossManager enemyBossManager;
         public UIEnemyHealthBar enemyHealthBar;
+        
+
+        public bool isBoss;
 
         private void Awake()
         {
             animator = GetComponentInChildren<Animator>();
+            enemyBossManager = GetComponent<EnemyBossManager>();
+            maxHealth = SetMaxHealthFromHealthLevel();
+            currentHealth = maxHealth;
         }
 
         void Start()
         {
-            maxHealth = SetMaxHealthFromHealthLevel();
-            currentHealth = maxHealth;
-            enemyHealthBar.SetMaxHealth(maxHealth);
+            if(!isBoss)
+            {
+                enemyHealthBar.SetMaxHealth(maxHealth);
+
+            }
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -34,7 +42,15 @@ namespace SG
                 return;
 
             currentHealth = currentHealth - damage;
-            enemyHealthBar.SetHealth(currentHealth);
+
+            if(!isBoss)
+            {
+                enemyHealthBar.SetHealth(currentHealth);
+            }
+            else if(isBoss && enemyBossManager != null)
+            {
+                enemyBossManager.UpdateBossHealthBar(currentHealth);
+            }
 
             animator.Play("DamageE_01");
 
