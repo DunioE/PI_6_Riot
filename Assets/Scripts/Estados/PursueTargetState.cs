@@ -7,25 +7,29 @@ namespace SG
     public class PursueTargetState : State
     {
         public CombatStanceState combatStanceState;
+        public RotateTowardsTargetState rotateTowardsTargetState;
 
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
+            Vector3 targetDirection = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
+            float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
+            float viewableAngle = Vector3.SignedAngle(targetDirection, enemyManager.transform.forward, Vector3.up);
+
+            HandleRotateTowardsTarget(enemyManager);
+
+            if (viewableAngle > 65 || viewableAngle < -65)
+                return rotateTowardsTargetState;
+
             if (enemyManager.isPreformingAction)
             {
                 enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
                 return this;
             }
 
-            Vector3 targetDirection = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
-            float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
-            float viewableAngle = Vector3.Angle(targetDirection, enemyManager.transform.forward);
-
             if (distanceFromTarget > enemyManager.maximumAttackRange)
             {
                 enemyAnimatorManager.anim.SetFloat("Vertical", 1, 0.1f, Time.deltaTime);
             }
-
-            HandleRotateTowardsTarget(enemyManager);
 
             if (distanceFromTarget <= enemyManager.maximumAttackRange)
             {

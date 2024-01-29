@@ -16,5 +16,13 @@ namespace SG
             anim.CrossFade(targetAnim, 0.2f);
             anim.SetBool("canRotate", false);
         }
+
+        public void PlayTargetAnimationWithRootRotation(string targetAnim, bool isInteracting)
+        {
+            anim.applyRootMotion = true;
+            anim.SetBool("isRotatingWithRootMotion", isInteracting);
+            anim.CrossFade(targetAnim, 0.2f);
+            anim.SetBool("canRotate", false);
+        }
     }
 }

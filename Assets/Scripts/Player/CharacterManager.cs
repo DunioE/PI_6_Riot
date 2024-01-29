@@ -10,5 +10,10 @@ namespace SG
 
         [Header("Spells")]
         public bool isFiringSpell;
+
+        [Header("Movement Flag")]
+        public bool isRotatingWithRootMotion;
+        public bool canRotate;
+
     }
 }

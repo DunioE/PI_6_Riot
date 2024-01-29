@@ -5663,11 +5663,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b94aee9a5afb24f9869a659751119e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateTowardsTargetState: {fileID: 1045581379}
   combatStanceState: {fileID: 1320272443}
-  enemyAttacks:
-  - {fileID: 11400000, guid: 2d857f6db6742014096bbac74dc12d7a, type: 2}
-  - {fileID: 11400000, guid: c67abba3ecfa09a499abc7cba175bbda, type: 2}
+  pursueTargetState: {fileID: 2015442311}
   currentAttack: {fileID: 0}
+  hasPerformedAttack: 0
 --- !u!4 &208099364
 Transform:
   m_ObjectHideFlags: 0
@@ -10719,6 +10719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatStanceState: {fileID: 1439848257}
+  rotateTowardsTargetState: {fileID: 1935003724}
 --- !u!4 &353127608
 Transform:
   m_ObjectHideFlags: 0
@@ -23057,6 +23058,10 @@ PrefabInstance:
       value: TrigoExterno (2)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d553340887062c34b9699d87816a57cc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d553340887062c34b9699d87816a57cc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 18
       objectReference: {fileID: 0}
@@ -24284,6 +24289,7 @@ Transform:
   - {fileID: 353127608}
   - {fileID: 1439848258}
   - {fileID: 1084229589}
+  - {fileID: 1935003723}
   m_Father: {fileID: 999192781}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &834033031 stripped
@@ -29141,6 +29147,7 @@ Transform:
   - {fileID: 2015442312}
   - {fileID: 1320272444}
   - {fileID: 208099364}
+  - {fileID: 1045581380}
   m_Father: {fileID: 1415846545}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &989327630
@@ -29785,6 +29792,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 99136797}
   isFiringSpell: 0
+  isRotatingWithRootMotion: 0
+  canRotate: 0
   currentState: {fileID: 144705346}
   currentTarget: {fileID: 0}
   navmeshAgent: {fileID: 0}
@@ -29799,7 +29808,7 @@ MonoBehaviour:
   minimumDetectionAngle: -50
   currentRecoveryTime: 0
   AllowAIToPerformCombos: 1
-  comboLikelyHood: 100
+  comboLikelyHood: 30
 --- !u!114 &999192778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31122,6 +31131,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045215696}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1045581378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1045581380}
+  - component: {fileID: 1045581379}
+  m_Layer: 0
+  m_Name: Rotate Towards Target State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1045581379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045581378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0985cfc562268469a3060b033cabe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatStanceState: {fileID: 1320272443}
+--- !u!4 &1045581380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045581378}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.547558, y: -0.044671357, z: 0}
+  m_LocalScale: {x: 0.8761602, y: 0.8761602, z: 0.8761602}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 989149102}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1046928331
 GameObject:
   m_ObjectHideFlags: 0
@@ -32020,12 +32074,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b94aee9a5afb24f9869a659751119e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateTowardsTargetState: {fileID: 1935003724}
   combatStanceState: {fileID: 1439848257}
-  enemyAttacks:
-  - {fileID: 11400000, guid: e6f0880ee1cfb4840b9e3a736c6b1f52, type: 2}
-  - {fileID: 11400000, guid: c2b114582c1187847bd3d9532581ced1, type: 2}
-  - {fileID: 11400000, guid: 061602fe1ca0b4247b5e45bc420563c6, type: 2}
+  pursueTargetState: {fileID: 353127607}
   currentAttack: {fileID: 0}
+  hasPerformedAttack: 0
 --- !u!4 &1084229589
 Transform:
   m_ObjectHideFlags: 0
@@ -49100,6 +49153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackState: {fileID: 208099363}
+  enemyAttacks:
+  - {fileID: 11400000, guid: 2d857f6db6742014096bbac74dc12d7a, type: 2}
+  - {fileID: 11400000, guid: c67abba3ecfa09a499abc7cba175bbda, type: 2}
   pursueTargetState: {fileID: 2015442311}
 --- !u!4 &1320272444
 Transform:
@@ -52135,21 +52191,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 651364464}
   isFiringSpell: 0
-  currentState: {fileID: 889723197}
+  isRotatingWithRootMotion: 0
+  canRotate: 0
+  currentState: {fileID: 824156011}
   currentTarget: {fileID: 0}
   navmeshAgent: {fileID: 0}
   enemyRigidBody: {fileID: 0}
   isPreformingAction: 0
   isInteracting: 0
-  rotationSpeed: 15
+  rotationSpeed: 30
   maximumAttackRange: 2
   canDoCombo: 0
   detectionRadius: 20
   maximumDetectionAngle: 50
   minimumDetectionAngle: -50
   currentRecoveryTime: 0
-  AllowAIToPerformCombos: 0
-  comboLikelyHood: 0
+  AllowAIToPerformCombos: 1
+  comboLikelyHood: 30
 --- !u!114 &1415846542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52335,6 +52393,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackState: {fileID: 1084229588}
+  enemyAttacks:
+  - {fileID: 11400000, guid: e6f0880ee1cfb4840b9e3a736c6b1f52, type: 2}
+  - {fileID: 11400000, guid: c2b114582c1187847bd3d9532581ced1, type: 2}
+  - {fileID: 11400000, guid: 061602fe1ca0b4247b5e45bc420563c6, type: 2}
   pursueTargetState: {fileID: 353127607}
 --- !u!4 &1439848258
 Transform:
@@ -62062,6 +62124,10 @@ PrefabInstance:
       value: TrigoExterno
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d553340887062c34b9699d87816a57cc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d553340887062c34b9699d87816a57cc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 18
       objectReference: {fileID: 0}
@@ -69463,6 +69529,10 @@ PrefabInstance:
       value: TrigoExterno (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d553340887062c34b9699d87816a57cc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d553340887062c34b9699d87816a57cc, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 18
       objectReference: {fileID: 0}
@@ -72725,6 +72795,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 1987334242}
   isFiringSpell: 0
+  isRotatingWithRootMotion: 0
+  canRotate: 0
   interactableUIGameObject: {fileID: 5983168048591481876}
   itemInteractableGameObject: {fileID: 4653792762606622669}
   isInteracting: 0
@@ -73061,6 +73133,51 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6326899718385490566, guid: c65accd8880fb574e900f5dca9a50f45, type: 3}
+--- !u!1 &1935003721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1935003723}
+  - component: {fileID: 1935003724}
+  m_Layer: 0
+  m_Name: Rotate Towards Target State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1935003723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935003721}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 833956725}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1935003724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935003721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0985cfc562268469a3060b033cabe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatStanceState: {fileID: 1439848257}
 --- !u!1001 &1938543238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75245,6 +75362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatStanceState: {fileID: 1320272443}
+  rotateTowardsTargetState: {fileID: 1045581379}
 --- !u!4 &2015442312
 Transform:
   m_ObjectHideFlags: 0
@@ -80658,8 +80776,8 @@ SceneRoots:
   - {fileID: 1381046308}
   - {fileID: 1930012452}
   - {fileID: 1612601463}
-  - {fileID: 1415846545}
   - {fileID: 999192781}
+  - {fileID: 1415846545}
   - {fileID: 1098628005}
   - {fileID: 8401444954053424243}
   - {fileID: 526573408}
