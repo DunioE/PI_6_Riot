@@ -115,6 +115,18 @@ namespace SG
             anim.SetBool("isInvulnerable", false);
         }
 
+        public void DisableCollision()
+        {
+            playerLocomotion.characterCollider.enabled = false;
+            playerLocomotion.characterCollisionBlockerCollider.enabled = false;
+        }
+
+        public void EnableCollision()
+        {
+            playerLocomotion.characterCollider.enabled = true;
+            playerLocomotion.characterCollisionBlockerCollider.enabled = true;
+        }
+
         private void OnAnimatorMove()
         {
             if (playerManager.isInteracting == false)

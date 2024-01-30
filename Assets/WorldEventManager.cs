@@ -6,6 +6,7 @@ namespace SG
 {
     public class WorldEventManager : MonoBehaviour
     {
+        public List<FogWall> fogWalls;
         public UIBossHealthBar bossHealthBar;
         public EnemyBossManager boss;
 
@@ -23,12 +24,22 @@ namespace SG
             bossFightIsActive = true;
             bossHasBeenAwakened = true;
             bossHealthBar.SetUIHealthBarToActive();
+
+            foreach (var fogWall in fogWalls)
+            {
+                fogWall.ActivateFogWall();
+            }
         }
 
         public void BossHasBeenDefeated()
         {
             bossHasBeenDefeated = true;
             bossFightIsActive = false;
+
+            foreach (var fogWall in fogWalls)
+            {
+                fogWall.DeactivateFogWall();
+            }
         }
     }
 }

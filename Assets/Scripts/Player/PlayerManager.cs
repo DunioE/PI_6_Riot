@@ -154,6 +154,17 @@ namespace SG
             }
         }
 
+        public void PassThroughFogWallInteraction(Transform fogwallEntrance)
+        {
+            playerLocomotion.rigidbody.velocity = Vector3.zero;
+
+            Vector3 rotationDirection = fogwallEntrance.transform.forward;
+            Quaternion turnRotation = Quaternion.LookRotation(rotationDirection);
+            transform.rotation = turnRotation;
+
+            animatorHandler.PlayTargetAnimation("Pass Through Fog", true);
+        }
+
     }
 
 }
