@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 8599582168240718401}
   - component: {fileID: 5886389807626899860}
   - component: {fileID: 1341490946478791334}
+  - component: {fileID: 6115199056379225221}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: EspadaVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +119,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0424ca2f2725f574d83f0ee6e0e3a41d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enabledDamageCooliderOnStartUp: 0
   currentWeaponDamage: 40
+--- !u!114 &6115199056379225221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706225659784719983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159a26b3d9f24d5439c6d46a8c35a5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  efeitoPrefab: {fileID: 8695650586172861808, guid: 18ce9fb4ba1bd124882193a4ed6b9093, type: 3}
+  tagsAlvo:
+  - Player
+  alturaEfeito: 1
 --- !u!1 &3282061493748645558
 GameObject:
   m_ObjectHideFlags: 0

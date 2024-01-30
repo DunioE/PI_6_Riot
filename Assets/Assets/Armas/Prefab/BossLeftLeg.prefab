@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7605160639528123484}
   - component: {fileID: 8013770684218401900}
   - component: {fileID: 7377436460559371433}
+  - component: {fileID: 2899045061939467260}
   m_Layer: 0
   m_Name: BossLeftLeg
   m_TagString: Untagged
@@ -118,4 +119,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0424ca2f2725f574d83f0ee6e0e3a41d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enabledDamageCooliderOnStartUp: 0
   currentWeaponDamage: 15
+--- !u!114 &2899045061939467260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994514607085626065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159a26b3d9f24d5439c6d46a8c35a5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  efeitoPrefab: {fileID: 8695650586172861808, guid: 18ce9fb4ba1bd124882193a4ed6b9093, type: 3}
+  tagsAlvo:
+  - Player
+  alturaEfeito: 1

@@ -77,9 +77,10 @@ GameObject:
   - component: {fileID: 7847713391043684340}
   - component: {fileID: 6807744144278813516}
   - component: {fileID: 7596192755295616031}
+  - component: {fileID: 3906351041389965712}
   m_Layer: 0
   m_Name: Machado
-  m_TagString: Untagged
+  m_TagString: EspadaVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,4 +183,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0424ca2f2725f574d83f0ee6e0e3a41d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enabledDamageCooliderOnStartUp: 0
   currentWeaponDamage: 25
+--- !u!114 &3906351041389965712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6893050862927513357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159a26b3d9f24d5439c6d46a8c35a5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  efeitoPrefab: {fileID: 8695650586172861808, guid: 18ce9fb4ba1bd124882193a4ed6b9093, type: 3}
+  tagsAlvo:
+  - Enemy
+  alturaEfeito: 1

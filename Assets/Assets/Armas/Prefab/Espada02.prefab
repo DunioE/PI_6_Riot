@@ -45,9 +45,10 @@ GameObject:
   - component: {fileID: 6189494668576113093}
   - component: {fileID: 7549208679050738955}
   - component: {fileID: 3710600249221535820}
+  - component: {fileID: 4703089025665914594}
   m_Layer: 0
   m_Name: Dragonblade
-  m_TagString: Untagged
+  m_TagString: EspadaVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +151,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0424ca2f2725f574d83f0ee6e0e3a41d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enabledDamageCooliderOnStartUp: 0
   currentWeaponDamage: 25
+--- !u!114 &4703089025665914594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175066331754470127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159a26b3d9f24d5439c6d46a8c35a5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  efeitoPrefab: {fileID: 8695650586172861808, guid: 18ce9fb4ba1bd124882193a4ed6b9093, type: 3}
+  tagsAlvo:
+  - Enemy
+  alturaEfeito: 1
 --- !u!1 &6670323400348378121
 GameObject:
   m_ObjectHideFlags: 0

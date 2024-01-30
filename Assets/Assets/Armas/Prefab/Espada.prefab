@@ -45,9 +45,10 @@ GameObject:
   - component: {fileID: 5107247965505160224}
   - component: {fileID: 7491848710653305133}
   - component: {fileID: 276100366779572366}
+  - component: {fileID: 6908983424218270231}
   m_Layer: 0
   m_Name: Espada
-  m_TagString: Untagged
+  m_TagString: EspadaVFX
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,7 +151,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0424ca2f2725f574d83f0ee6e0e3a41d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enabledDamageCooliderOnStartUp: 0
   currentWeaponDamage: 25
+--- !u!114 &6908983424218270231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6446220965916120081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159a26b3d9f24d5439c6d46a8c35a5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  efeitoPrefab: {fileID: 8695650586172861808, guid: 18ce9fb4ba1bd124882193a4ed6b9093, type: 3}
+  tagsAlvo:
+  - Enemy
 --- !u!1 &7084412317157662333
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +177,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7573704214785148103}
+  - component: {fileID: 4573344984427555947}
   m_Layer: 0
   m_Name: Espada
   m_TagString: Untagged
@@ -183,3 +201,19 @@ Transform:
   - {fileID: 9193383577185318131}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -2.131, y: 0.131, z: 0.067}
+--- !u!114 &4573344984427555947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7084412317157662333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159a26b3d9f24d5439c6d46a8c35a5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  efeitoPrefab: {fileID: 8695650586172861808, guid: 18ce9fb4ba1bd124882193a4ed6b9093, type: 3}
+  tagsAlvo:
+  - Player
+  - Enemy
