@@ -1446,7 +1446,7 @@ Transform:
   m_GameObject: {fileID: 44268438}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -293, y: 1.76, z: 86.31}
+  m_LocalPosition: {x: -293.19, y: 1.76, z: 86.31}
   m_LocalScale: {x: 1, y: 3.596036, z: 9.393887}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13777,8 +13777,8 @@ Transform:
   m_GameObject: {fileID: 447169154}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -290.1, y: 0.15704, z: 84.095}
-  m_LocalScale: {x: 13.179168, y: 0.92457044, z: 0.41358063}
+  m_LocalPosition: {x: -289.92, y: 0.12, z: 84.095}
+  m_LocalScale: {x: 13.179168, y: 1.4794977, z: 0.23920842}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1419978209}
@@ -54064,6 +54064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossName: Rei Emrys
+  fogWall: {fileID: 0}
 --- !u!1 &1419978208
 GameObject:
   m_ObjectHideFlags: 0
@@ -82023,8 +82024,8 @@ Transform:
   m_GameObject: {fileID: 5826985984788081892}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -291.23, y: 1.76, z: 86.11}
-  m_LocalScale: {x: 1, y: 3.596036, z: 7.848514}
+  m_LocalPosition: {x: -292.1, y: 1.76, z: 86.109}
+  m_LocalScale: {x: 1, y: 3.596036, z: 7.8818283}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8434783756006545366}

@@ -18,6 +18,15 @@ namespace SG
             base.Interact(playerManager);
             playerManager.PassThroughFogWallInteraction(transform);
             worldEventManager.ActivateBossFight();
+
+            StartCoroutine(DestroyAfterAnimation());
+
+            IEnumerator DestroyAfterAnimation()
+            {
+                yield return new WaitForSeconds(2.0f);
+
+                Destroy(gameObject);
+            }
         }
     }
 }

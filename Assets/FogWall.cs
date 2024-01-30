@@ -19,6 +19,19 @@ namespace SG
         public void DeactivateFogWall()
         {
             gameObject.SetActive(false);
+
+            Collider[] colliders = GetComponentsInChildren<Collider>();
+            foreach (Collider collider in colliders)
+            {
+                collider.enabled = false;
+            }
+
+            ParticleSystem particleSystem = GetComponentInChildren<ParticleSystem>();
+            if (particleSystem != null)
+            {
+                particleSystem.Stop();
+                particleSystem.gameObject.SetActive(false);
+            }
         }
     }
 }
