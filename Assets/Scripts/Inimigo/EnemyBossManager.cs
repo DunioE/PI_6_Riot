@@ -17,7 +17,7 @@ namespace SG
             bossHealthBar = Object.FindFirstObjectByType<UIBossHealthBar>();
             enemyStats = GetComponent<EnemyStats>();
             fogWall = GetComponentInChildren<FogWall>();
-            worldEventManager = FindObjectOfType<WorldEventManager>();
+            worldEventManager = Object.FindFirstObjectByType<WorldEventManager>();
 
             if (worldEventManager == null)
             {
