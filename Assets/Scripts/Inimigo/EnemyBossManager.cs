@@ -38,9 +38,15 @@ namespace SG
             
             if (currentHealth <= 0 && worldEventManager != null)
             {
-                
+                Invoke("DeactivateHealthBarWithDelay", 3f);
+
                 worldEventManager.BossHasBeenDefeated();
             }
+        }
+
+        private void DeactivateHealthBarWithDelay()
+        {
+            bossHealthBar.SetHealthBarToInactive();
         }
     }
 }
