@@ -19,8 +19,8 @@ MonoBehaviour:
   right_hand_idle: Right_Arm_Idle_02
   left_hand_idle: Left_Arm_Idle_02
   th_idle: TH_Idle_01
-  OH_Light_Attack_1: E01_Attack
-  OH_Light_Attack_2: E01_Attack2
+  OH_Light_Attack_1: E02_Attack
+  OH_Light_Attack_2: E02_Attack2
   OH_Heavy_Attack_1: OH_Heavy_Attack_01
   th_light_attack_1: TH_Sword_Attack_01
   th_light_attack_2: TH_Sword_Attack_02
