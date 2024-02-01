@@ -5,9 +5,9 @@ using UnityEngine;
 public class ChuvaController : MonoBehaviour
 {
     public float tempoParaAtivar = 5.0f; // Tempo para ativar a chuva
-    public float duracaoChuva = 10.0f; // Tempo que a chuva permanecer· ativa
+    public float duracaoChuva = 10.0f; // Tempo que a chuva permanecer√° ativa
 
-    // ReferÍncia para o Particle System
+    // Refer√™ncia para o Particle System
     public ParticleSystem particleSystem;
 
     private bool chuvaAtiva = false;
@@ -15,20 +15,20 @@ public class ChuvaController : MonoBehaviour
 
     void Start()
     {
-        // Garante que o Particle System n„o est· reproduzindo inicialmente
+        // Garante que o Particle System n√£o est√° reproduzindo inicialmente
         if (particleSystem != null)
         {
             particleSystem.Stop();
         }
         else
         {
-            Debug.LogError("Particle System n„o atribuÌdo! Atribua um Particle System no Editor do Unity.");
+            Debug.LogError("Particle System n√£o atribu√≠do! Atribua um Particle System no Editor do Unity.");
         }
     }
 
     void Update()
     {
-        // Se a chuva n„o estiver ativa, contabiliza o tempo atÈ ativar
+        // Se a chuva n√£o estiver ativa, contabiliza o tempo at√© ativar
         if (!chuvaAtiva)
         {
             tempoPassado += Time.deltaTime;
@@ -41,10 +41,10 @@ public class ChuvaController : MonoBehaviour
         }
         else
         {
-            // Se a chuva estiver ativa, contabiliza o tempo de duraÁ„o
+            // Se a chuva estiver ativa, contabiliza o tempo de dura√ß√£o
             tempoPassado += Time.deltaTime;
 
-            // Se o tempo passado atingir o tempo de duraÁ„o, desativa a chuva e reinicia o ciclo
+            // Se o tempo passado atingir o tempo de dura√ß√£o, desativa a chuva e reinicia o ciclo
             if (tempoPassado >= duracaoChuva)
             {
                 DesativarChuva();
@@ -67,7 +67,7 @@ public class ChuvaController : MonoBehaviour
         // Para o Particle System
         particleSystem.Stop();
 
-        // Reseta o tempo passado e marca a chuva como n„o ativa
+        // Reseta o tempo passado e marca a chuva como n√£o ativa
         tempoPassado = 0.0f;
         chuvaAtiva = false;
     }
