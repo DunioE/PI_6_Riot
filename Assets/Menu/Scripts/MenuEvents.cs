@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class MenuEvents : MonoBehaviour
 {
-    public void LoadLevel(int index)
+    public void Exit()
     {
-        SceneManager.LoadScene(index);
+        Application.Quit();
     }
 }
