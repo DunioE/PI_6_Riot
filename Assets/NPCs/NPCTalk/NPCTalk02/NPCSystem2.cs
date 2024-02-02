@@ -24,8 +24,8 @@ public class NPCSystem2 : MonoBehaviour
     {
         animator.SetBool("isTalking", true);
 
-        NewDialogue("eu sou o 02");
-        NewDialogue("muito bem");
+        NewDialogue("Onde já se viu?");
+        NewDialogue("Nem sequer me deixam subir as escadas, aqueles nobres precisavam de uma boa lição");
         canva.transform.GetChild(1).gameObject.SetActive(true);
         dialogueInProgress = true;
     }

@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enabledDamageCooliderOnStartUp: 0
-  currentWeaponDamage: 15
+  currentWeaponDamage: 20
 --- !u!114 &2899045061939467260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,3 +137,4 @@ MonoBehaviour:
   tagsAlvo:
   - Player
   alturaEfeito: 1
+  duracaoEfeito: 3

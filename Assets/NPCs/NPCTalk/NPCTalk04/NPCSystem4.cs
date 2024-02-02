@@ -24,8 +24,8 @@ public class NPCSystem4 : MonoBehaviour
     {
         animator.SetBool("isTalking", true);
 
-        NewDialogue("teste do 4");
-        NewDialogue("isto é outro teste");
+        NewDialogue("Dava qualquer coisa para ver aquele Rei no chão");
+        NewDialogue("Se houvesse uma forma de o derrotar eu não pensaria duas vezes");
         canva.transform.GetChild(1).gameObject.SetActive(true);
         dialogueInProgress = true;
     }

@@ -24,8 +24,10 @@ public class NPCSystem3 : MonoBehaviour
     {
         animator.SetBool("isTalking", true);
 
-        NewDialogue("bom, eu sou o 3");
-        NewDialogue("estas quase");
+        NewDialogue("Olá Raynard!");
+        NewDialogue("Que belo dia não é?");
+        NewDialogue("Isso era o que eu diria se não tivesse de andar aqui a trabalhar todos os dias");
+        NewDialogue("A encher o bandulho aqueles nobres");
         canva.transform.GetChild(1).gameObject.SetActive(true);
         dialogueInProgress = true;
     }

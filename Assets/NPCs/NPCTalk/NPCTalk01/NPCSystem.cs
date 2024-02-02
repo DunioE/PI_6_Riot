@@ -24,8 +24,9 @@ public class NPCSystem : MonoBehaviour
     {
         animator.SetBool("isTalking", true);
 
-        NewDialogue("Oi eu sou o 01");
-        NewDialogue("teste feito");
+        NewDialogue("Ah aquele maldito Rei, Nunca ninguem o derrotou, nem mesmo durante a rebelião");
+        NewDialogue("Dizem por ai que existe uma espada capaz de derrotar qualquer coisa");
+        NewDialogue("Mas estou demasiado velho para me aventurar nessas coisas");
         canva.transform.GetChild(1).gameObject.SetActive(true);
         dialogueInProgress = true;
     }

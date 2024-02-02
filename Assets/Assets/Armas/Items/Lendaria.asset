@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa9c09d32efcc447870d5aa77cfc8dc, type: 3}
   m_Name: Lendaria
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: 72c813fdab87f9947b473ad43399177f, type: 3}
+  itemIcon: {fileID: 21300000, guid: 27aad0c40dfc2884ea1adbb0f038e671, type: 3}
   itemName: "Espada Lend\xE1ria"
   modelPrefab: {fileID: 5533364073381335906, guid: ea85ead4efe9f084d878abf204e5e1ae, type: 3}
   isUnarmed: 0

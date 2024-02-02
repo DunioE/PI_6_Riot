@@ -24,8 +24,10 @@ public class NPCSystem5 : MonoBehaviour
     {
         animator.SetBool("isTalking", true);
 
-        NewDialogue("boa tudo certo");
-        NewDialogue("parabens");
+        NewDialogue("Hm? queres passar? infelizmente uma das crianças roubou-me a chave");
+        NewDialogue("deve querer brincaidera");
+        NewDialogue("Eles foram na direção dos campos, se encontrares a chave podes sair");
+        NewDialogue("Boa sorte!");
         canva.transform.GetChild(1).gameObject.SetActive(true);
         dialogueInProgress = true;
     }
