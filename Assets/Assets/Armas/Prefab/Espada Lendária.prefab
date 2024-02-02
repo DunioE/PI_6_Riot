@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enabledDamageCooliderOnStartUp: 0
-  currentWeaponDamage: 25
+  currentWeaponDamage: 300
 --- !u!114 &8748979320582644881
 MonoBehaviour:
   m_ObjectHideFlags: 0
